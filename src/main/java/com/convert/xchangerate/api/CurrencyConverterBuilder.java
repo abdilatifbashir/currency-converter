@@ -10,4 +10,9 @@ public class CurrencyConverterBuilder {
         private String _accessKey;
         private Strategy _strategy;
         private DiskStore diskStore;
+
+        public CurrencyConverterBuilder() {
+
+        }
+        
 }
