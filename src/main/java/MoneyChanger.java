@@ -21,6 +21,6 @@ public class MoneyChanger {
     nickels = centsLeft/5;
     centsLeft = centsLeft%5;
 
-    
+    pennies = centsLeft;
   }
 }
