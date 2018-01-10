@@ -26,5 +26,9 @@ public class CurrencyConverter implements Converter {
                 endpointFactory.refreshRateSeconds = seconds;
         }
 
+        public void setResourceFilepath(String resourceFilepath) {
+                diskStore.resourceFilepath = resourceFilepath;
+        }
+
         
 }
