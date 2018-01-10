@@ -8,5 +8,13 @@ public class MoneyChanger {
     int dimes = 0;
     int nickels = 0;
     int pennies = 0;
+
+    dollars = cents/100;
+    centsLeft = cents%100;
+
+    quarters = centsLeft/25;
+    centsLeft = centsLeft%25;
+
+    
   }
 }
