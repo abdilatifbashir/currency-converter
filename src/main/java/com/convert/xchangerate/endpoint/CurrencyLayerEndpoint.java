@@ -19,4 +19,10 @@ public class CurrencyLayerEndpoint extends EndpointFactory {
         public BigDecimal getRate(Currency currency) throws JSONException {
                 return new BigDecimal(exchangeRates.getJSONObject("quotes").getDOuble("USD" + currency));
         }
+        public boolean checkResponse() throws EndpointException, JSONException {
+                if (response.get("success").toString().equalsIgnoreCase("false")) {
+                        throw new EndpointException("Currency Layer request did not succeed, info: " + response.getJSONObject("error").get("info"));
+                }
+                return true;
+        }
 }
