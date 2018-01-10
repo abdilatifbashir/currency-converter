@@ -23,5 +23,13 @@ public class HttpserviceImpl implements HttpService {
                 this.uri = uri;
         }
 
-        
+        private void setMethod(HttpMethods method) throws ServiceException {
+                if (method.equals(HttpMethods.GET)) {
+                        httpMethod = new HttpGet(uri);
+                } else if (method.equals(HttpMethods.POST)) {
+                        httpMethod = new HttpPost(uri);
+                } else {
+                        throw new ServiceException("Unsupported HTTP Method: " + method.toString() + "for HttpserviceImpl class");
+                }
+        }
 }
