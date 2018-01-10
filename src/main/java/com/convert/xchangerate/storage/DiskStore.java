@@ -7,5 +7,7 @@ public abstract class DiskStore {
 
         public abstract void saveRates(JSONObject exchangeRates) throws StorageException;
 
+        public abstract JSONObject loadRates() throws StorageException;
+
         
 }
