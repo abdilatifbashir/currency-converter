@@ -8,5 +8,8 @@ public enum HttpMethods {
 
         private String method;
 
+        private HttpMethods(String method) {
+                this.method = method;
+        }
         
 }
