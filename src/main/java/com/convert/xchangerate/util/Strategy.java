@@ -14,5 +14,7 @@ public enum Strategy {
                 this.strategy = strategy;
         }
 
-        
+        public String toString() {
+                return this.strategy;
+        }
 }
