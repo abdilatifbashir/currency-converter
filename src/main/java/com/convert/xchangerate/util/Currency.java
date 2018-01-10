@@ -200,4 +200,10 @@ public enum Currency {
   // Reverse-lookup map for getting a currency from a symbol
   private static final Map<String, Currency> lookup = new HashMap<String, Currency>();
 
+  static {
+          for (Currency c : Currency.values()) {
+                  lookup.put(c.toString(), c);
+          }
+  }
+
   
