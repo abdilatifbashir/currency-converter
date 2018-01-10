@@ -188,4 +188,8 @@ public enum Currency {
 
   private final String symbol;
 
+  private Currency(final String symbol) {
+          this.symbol = symbol;
+  }
+
   
