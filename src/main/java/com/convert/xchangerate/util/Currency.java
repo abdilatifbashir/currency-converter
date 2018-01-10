@@ -192,4 +192,7 @@ public enum Currency {
           this.symbol = symbol;
   }
 
-  
+  @Override
+  public String toString() {
+          return symbol;
+  }
