@@ -25,6 +25,14 @@ public class App {
     return new ModelAndView(model, layout);
   }, new VelocityTemplateEngine());
 
+  //Root that triggers my templates
+  get("/home", (request, response) -> {
+  Map<String, Object> model = new HashMap<String, Object>();
+  model.put("template", "templates/home.vtl");
+  return new ModelAndView(model, layout);
+}, new VelocityTemplateEngine());
+
+
 
   }
 }
