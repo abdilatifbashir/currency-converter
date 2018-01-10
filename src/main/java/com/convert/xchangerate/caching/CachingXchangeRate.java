@@ -12,5 +12,9 @@ import com.convert.xchangerate.util.Currency;
 
 public abstract class CachingXchangeRate {
 
-  
+        public int refreshRateSeconds = 86400;
+        public JSONObject exchangeRates = null;
+        private DiskStore diskStore;
+
+        
 }
