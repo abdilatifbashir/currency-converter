@@ -186,4 +186,6 @@ public enum Currency {
 	ZMW("ZMW"),
 	ZWD("ZWD");
 
+  private final String symbol;
+
   
