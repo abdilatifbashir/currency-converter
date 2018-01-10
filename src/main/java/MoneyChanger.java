@@ -18,6 +18,9 @@ public class MoneyChanger {
     dimes = centsLeft/10;
     centsLeft = centsLeft%10;
 
+    nickels = centsLeft/5;
+    centsLeft = centsLeft%5;
+
     
   }
 }
