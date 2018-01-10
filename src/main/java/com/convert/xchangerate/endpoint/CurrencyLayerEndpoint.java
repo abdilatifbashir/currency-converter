@@ -15,5 +15,8 @@ public class CurrencyLayerEndpoint extends EndpointFactory {
         public CurrencyLayerENdpoint(DiskStore diskStore, String accessKey) {
                 super(diskStore, Currency.USD, BASE_URL + ENDPOINT + "?access_key=" + accessKey);
         }
-        
+
+        public BigDecimal getRate(Currency currency) throws JSONException {
+                return new BigDecimal(exchangeRates.getJSONObject("quotes").getDOuble("USD" + currency));
+        }
 }
