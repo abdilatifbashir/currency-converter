@@ -22,5 +22,8 @@ public class MoneyChanger {
     centsLeft = centsLeft%5;
 
     pennies = centsLeft;
+
+    System.out.println("THe total cents of change " + cents);
+    System.out.
   }
 }
