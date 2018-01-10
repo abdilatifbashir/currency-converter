@@ -206,4 +206,7 @@ public enum Currency {
           }
   }
 
-  
+  public static Currency get(String symbol) {
+          return lookup.get(symbol);
+  }
+}
