@@ -40,5 +40,5 @@ public abstract class CachingXchangeRate {
                 return false;
         }
 
-        
+        public abstract long getTimestamp(Currency currency) throws JSONException, CurrencyNotSupportedException;
 }
