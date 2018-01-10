@@ -8,3 +8,7 @@ import org.joda.time.DateTime;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.convert.xchangerate.api.CurrencyNotSupportedException;
+import com.convert.xchangerate.storage.DiskStore;
+import com.convert.xchangerate.util.Currency;
