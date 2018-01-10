@@ -45,4 +45,14 @@ public class CurrencyConverter implements Converter {
                 }
                 return amount;
         }
+
+        public void updateResource(Currency fromCurrency, Currency to Currency) throws CurrencyNotSupportedException, StorageException, JSONException, EndpointException, ServiceException {
+                if (!endpointFactory.checkRatesUsable(fromCurrency) || !endpointFactory.checkRatesUsable(toCurrency)) {
+                        JSONObject response = endpointFactory.sendLiveRequest();
+                        diskStore.saveRates(response);
+                        endpointFactory.setExchangeRates(response);
+                } else {
+                        endpointFactory.setExchangeRates(diskStore.loadRates());
+                }
+        }
 }
