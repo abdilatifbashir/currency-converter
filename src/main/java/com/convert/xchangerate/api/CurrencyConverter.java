@@ -4,3 +4,11 @@ import java.math.BigDecimal;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.convert.xchangerate.endpoint.EndpointException;
+import com.convert.xchangerate.endpoint.EndpointFactory;
+import com.convert.xchangerate.service.ServiceException;
+import com.convert.xchangerate.storage.DiskStore;
+import com.convert.xchangerate.storage.StorageException;
+import com.convert.xchangerate.util.Currency;
+import com.convert.xchangerate.util.Strategy;
