@@ -8,3 +8,7 @@ import org.json.JSONObject;
 import com.convert.xchangerate.api.CurrencyNotSupportedException;
 import com.convert.xchangerate.service.ServiceException;
 import com.convert.xchangerate.util.Currency;
+
+public interface ServiceEndpoint {
+  
+}
