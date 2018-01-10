@@ -23,7 +23,7 @@ public class MoneyChanger {
 
     pennies = centsLeft;
 
-    System.out.println("THe total cents of change " + cents);
-    System.out.
+    System.out.println("The total cents of change " + cents);
+    System.out.println("The dollars are " + dollars);
   }
 }
