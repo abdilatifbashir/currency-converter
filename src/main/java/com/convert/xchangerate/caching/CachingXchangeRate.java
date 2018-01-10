@@ -16,5 +16,9 @@ public abstract class CachingXchangeRate {
         public JSONObject exchangeRates = null;
         private DiskStore diskStore;
 
+        public CachingXchangeRate(DiskStore diskStore) {
+                this.diskStore = diskStore;
+        }
+
         
 }
