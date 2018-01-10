@@ -15,6 +15,9 @@ public class MoneyChanger {
     quarters = centsLeft/25;
     centsLeft = centsLeft%25;
 
+    dimes = centsLeft/10;
+    centsLeft = centsLeft%10;
+
     
   }
 }
