@@ -58,4 +58,12 @@ public class FileStore extends DiskStore {
                   throw new StorageException(e);
           }
         }
+
+        public boolean resourceExists() {
+                File f = new File(resourceFilepath + ratesFilename);
+                if (f.exists() && !f.isDirectory()) {
+                        return true;
+                }
+                return false;
+        }
 }
