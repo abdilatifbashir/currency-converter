@@ -12,3 +12,11 @@ import org.json.JSONObject;
 import com.convert.xchangerate.api.CurrencyNotSupportedException;
 import com.convert.xchangerate.storage.DiskStore;
 import com.convert.xchangerate.util.Currency;
+
+public class YahooEndpoint extends EndpointFactory {
+        public static final String BASE_URL = "http://finance.yahoo.com/webservice/v1/symbols/allcurrencies/";
+        public static final String ENDPOINT = "quote";
+        private Map rate = new HashMap();
+
+        
+}
