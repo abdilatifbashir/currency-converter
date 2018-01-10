@@ -15,3 +15,19 @@ import com.convert.xchangerate.service.ServiceException;
 import com.convert.xchangerate.storage.StorageException;
 import com.convert.xchangerate.util.Currency;
 import com.convert.xchangerate.util.Strategy;
+
+@Test
+public class ConversionTest {
+  private CurrencyConverter converter;
+
+  @BeforeClass
+  public void setup() {
+    converter = new CurrencyConverterBuilder()
+                    .strategy(Strategy.YAHOO_FINANCE_FILESTORE)
+                    .accessKey("")
+                    .buildConverter();
+    converter.setRefreshRateSeconds(86400);
+  }
+
+  
+}
