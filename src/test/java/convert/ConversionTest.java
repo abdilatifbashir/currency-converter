@@ -33,4 +33,9 @@ public class ConversionTest {
   public void simpleCOnverterFunctionalityTest() throws ServiceException, StorageException, CurrencyNotSupportedException, EndpointException, JSONException {
           Assert.assertNotNull(converter.convertCurrency(new BigDecimal("100"), Currency.USD, Currency.EUR), "Expected a value after conversion");
   }
+
+  @Test
+  public void simpleConversionTest() throws ServiceException, StorageException, CurrencyNotSupportedException, EndpointException, JSONException {
+          Assert.assertTrue(converter.convertCurrency(new BigDecimal("100", Currency.USD, Currency.GBP).compareTo(new BigDecimal("100.00")) == -1, "Expected a value after conversion"));
+  }
 }
