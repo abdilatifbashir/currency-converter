@@ -29,5 +29,8 @@ public class ConversionTest {
     converter.setRefreshRateSeconds(86400);
   }
 
-  
+  @Test
+  public void simpleCOnverterFunctionalityTest() throws ServiceException, StorageException, CurrencyNotSupportedException, EndpointException, JSONException {
+          Assert.assertNotNull(converter.convertCurrency(new BigDecimal("100"), Currency.USD, Currency.EUR), "Expected a value after conversion");
+  }
 }
