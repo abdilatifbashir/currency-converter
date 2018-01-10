@@ -44,4 +44,6 @@ public abstract class EndpointFactory extends CachingXchangeRate implements Serv
                 int digitsBeforeDecimal = moneyAmount.toPlainString().split("\\.")[0].length();
                 return getRate(toCurrency).multiply(moneyAmount, new MathContext(digitsBeforeDecimal + 2, RoundingMode.HALF_UP));
         }
+
+        public abstract boolean checkResponse() throws ENdpointException, JSONException;
 }
