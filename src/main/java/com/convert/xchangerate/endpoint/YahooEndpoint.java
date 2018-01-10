@@ -22,5 +22,9 @@ public class YahooEndpoint extends EndpointFactory {
                 super(diskStore, Currency.USD, BASE_URL + ENDPOINT + "?format=json");
         }
 
-        
+        public boolean checkResponse() throws EndpointException, JSONException {
+                response.getJSONObject("list").getJSONArray("resources").getJSONObject(1).getJSONObject("resource").getJSONObject("fields").getString("name");
+
+                return true;
+        }
 }
