@@ -25,5 +25,6 @@ public class MoneyChanger {
 
     System.out.println("The total cents of change " + cents);
     System.out.println("The dollars are " + dollars);
+    System.out.println("The quarters are " + quarters);
   }
 }
