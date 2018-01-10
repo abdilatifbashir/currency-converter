@@ -14,3 +14,13 @@ import com.convert.xchangerate.service.HttpserviceImpl;
 import com.convert.xchangerate.service.ServiceException;
 import com.convert.xchangerate.storage.DiskStore;
 import com.convert.xchangerate.util.Currency;
+
+public abstract class EndpointFactory extends CachingXchangeRate implements ServiceEndpoint {
+        // the intermediate Currency
+        public Currency baseCurrency;
+        // used for executing requests to the (REST) api
+        private HttpserviceImpl httpservice;
+        protected JSONObject response;
+
+        
+}
