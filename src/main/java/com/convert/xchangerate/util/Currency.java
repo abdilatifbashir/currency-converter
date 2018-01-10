@@ -196,3 +196,8 @@ public enum Currency {
   public String toString() {
           return symbol;
   }
+
+  // Reverse-lookup map for getting a currency from a symbol
+  private static final Map<String, Currency> lookup = new HashMap<String, Currency>();
+
+  
