@@ -10,5 +10,7 @@ import com.convert.xchangerate.service.ServiceException;
 import com.convert.xchangerate.util.Currency;
 
 public interface ServiceEndpoint {
-  
+
+        public JSONObject sendLiveRequest() throws JSONException, ServiceException, EndpointException;
+        
 }
