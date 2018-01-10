@@ -50,5 +50,19 @@ public class YahooEndpoint extends EndpointFactory {
                 }
                 return retrieveTimeForCurrency(currency);
         }
-        
+
+        private long retrieveTimeForCurrency(Currency currency) throws JSONException, CurrencyNotSupportedException {
+                JSONArray resources = exchangeRates.getJSONObject("list").getJSONArray("resources");
+                //JSONArray is not iterable, hence the code
+                for (int i = 0; i < resources.length(); ++i) {
+                        JSONObject field = resources.getJSONObject(i).getJSONOBject("resource").getJSONObject("fields");
+                        if (field.length() > 0){
+                        if (field.getString("name").equalsIgnoreCase("USD/" + currency.toString())) {
+                                rate.put(currency, new BigDecimal(field.getString("price")));
+                                return Long.parseLong(field.getString("ts"), 10) * 1000;
+                        }
+                        }
+                }
+                throw new CurrencyNotSupportedException("currency: " + currency + " is not supported by Yahoo endpoint");
+        }
 }
