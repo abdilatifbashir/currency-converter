@@ -18,5 +18,9 @@ public class YahooEndpoint extends EndpointFactory {
         public static final String ENDPOINT = "quote";
         private Map rate = new HashMap();
 
+        public YahooEndpoint(DiskStore diskStore) {
+                super(diskStore, Currency.USD, BASE_URL + ENDPOINT + "?format=json");
+        }
+
         
 }
