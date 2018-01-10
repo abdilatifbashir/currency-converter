@@ -30,4 +30,32 @@ public class FileStore extends DiskStore {
                         throw new StorageException(e);
                 }
         }
+
+        public JSONObject loadRates() throws StorageException {
+          // parse the JSON string from the resource file
+          String jsonData = "";
+          BufferdReader br = null;
+          try {
+                  String line;
+                  br = new BufferedReader(new FileReader(resourceFilepath + ratesFilename));
+                  while ((line = br.readLine()) != null) {
+                          jsonData += line + "\n";
+                  }
+          } catch (IOException e) {
+                  throw new StorageException(e);
+          } finally  {
+                  try {
+                          if (br != null)
+                                  br.close();
+                  } catch (IOException ex) {
+                          ex.printStackTrace();
+                  }
+          }
+          // convert the parsed string to a JSON object
+          try {
+                  return new JSONObject(jsonData);
+          } catch (JSONException e) {
+                  throw new StorageException(e);
+          }
+        }
 }
