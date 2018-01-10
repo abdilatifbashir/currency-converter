@@ -9,5 +9,7 @@ public class StorageException extends Exception {
                 super(message);
         }
 
-        
+        public StorageException(Throwable cause) {
+                super(cause);
+        }
 }
