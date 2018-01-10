@@ -8,3 +8,9 @@ import java.io.IOException;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+public class FileStore extends DiskStore {
+        protected String ratesFilename;
+
+        
+}
