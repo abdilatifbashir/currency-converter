@@ -16,4 +16,10 @@ import com.convert.xchangerate.util.Strategy;
 public class CurrencyConverter implements Converter {
         public DiskStore diskStore;
         public EndpointFactory endpointFactory;
+
+        public CurrencyConverter(DiskStore diskStore, EndpointFactory endpointFactory) {
+                this.diskStore = diskStore;
+                this.endpointFactory = endpointFactory;
+        }
+        
 }
