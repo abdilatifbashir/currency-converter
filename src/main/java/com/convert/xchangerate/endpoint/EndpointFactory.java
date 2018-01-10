@@ -22,5 +22,11 @@ public abstract class EndpointFactory extends CachingXchangeRate implements Serv
         private HttpserviceImpl httpservice;
         protected JSONObject response;
 
+        public EndpointFactory(DiskStore diskStore, Currency baseCurrency, String uri) {
+                super(diskStore);
+                this.baseCurrency = baseCurrency;
+                httpservice = new HttpserviceImpl(uri);
+        }
+
         
 }
