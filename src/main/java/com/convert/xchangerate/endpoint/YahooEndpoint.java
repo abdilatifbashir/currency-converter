@@ -27,4 +27,20 @@ public class YahooEndpoint extends EndpointFactory {
 
                 return true;
         }
+
+        public BigDecimal getRate(Currency currency) throws JSONException, CurrencyNotSupportedException {
+                if (!rate.isEmpty() && rate.containsKey(currency)) {
+                        return (BigDecimal) rate.get(currency);
+                }
+                JSONArray resources = exchangeRates.getJSONObject("list").getJSONArray("resources");
+                //JSONArray is not iterable, hence the code
+                for (int i = 0; i < resources.length(); ++i) {
+                        JSONObject field = resources.getJSONObject(i).getJSONObject("resource").getJSONObject("fields");
+                        if (field.getString("name").equalsIgnoreCase("USD/" + currency.toString())) {
+                                rate.put(currency, new BigDecimal(field.getDouble("price")));
+                                return new BigDecimal(field.getDouble("price"));
+                        }
+                }
+                throw new CurrencyNotSupportedException("currency: " + currency + " is not supported by Yahoo endpoint");
+        }
 }
