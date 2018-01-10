@@ -46,4 +46,6 @@ public abstract class EndpointFactory extends CachingXchangeRate implements Serv
         }
 
         public abstract boolean checkResponse() throws ENdpointException, JSONException;
+
+        public abstract BigDecimal getRate(Currency currency) throws JSONException, CurrencyNotSupportedException;
 }
