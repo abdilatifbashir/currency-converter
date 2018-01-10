@@ -6,5 +6,7 @@ public enum HttpMethods {
         PUT("PUT"),
         DELETE("DELETE");
 
+        private String method;
+
         
 }
