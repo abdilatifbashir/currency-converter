@@ -25,4 +25,8 @@ public class CurrencyLayerEndpoint extends EndpointFactory {
                 }
                 return true;
         }
+
+        public long getTimestamp(Currency currency) throws JSONException {
+                return Long.parseLong(exchangeRates.get("timestamp").toString(), 10) * 1000;
+        }
 }
