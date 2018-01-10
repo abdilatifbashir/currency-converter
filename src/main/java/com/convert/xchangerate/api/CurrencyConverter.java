@@ -21,5 +21,10 @@ public class CurrencyConverter implements Converter {
                 this.diskStore = diskStore;
                 this.endpointFactory = endpointFactory;
         }
+
+        public void setRefreshRateSeconds(int seconds) {
+                endpointFactory.refreshRateSeconds = seconds;
+        }
+
         
 }
