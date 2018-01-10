@@ -16,5 +16,9 @@ public interface ServiceEndpoint {
         public abstract boolean checkResponse() throws EndpointException, JSONException;
 
         public BigDecimal convertToBaseCurrency(BigDecimal moneyAmount, Currency fromCurrency) throws JSONException, CurrencyNotSupportedException;
-        
+
+        public BigDecimal convertFromBaseCurrency(BigDecimal moneyAmount, Currency toCurrency) throws JSONException, CurrencyNotSupportedException;
+
+        public abstract BigDecimal getRate(Currency currency) throws JSONException, CurrencyNotSupportedException;
+      
 }
