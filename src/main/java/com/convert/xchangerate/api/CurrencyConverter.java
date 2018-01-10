@@ -12,3 +12,8 @@ import com.convert.xchangerate.storage.DiskStore;
 import com.convert.xchangerate.storage.StorageException;
 import com.convert.xchangerate.util.Currency;
 import com.convert.xchangerate.util.Strategy;
+
+public class CurrencyConverter implements Converter {
+        public DiskStore diskStore;
+        public EndpointFactory endpointFactory;
+}
