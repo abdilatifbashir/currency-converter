@@ -28,5 +28,11 @@ public abstract class EndpointFactory extends CachingXchangeRate implements Serv
                 httpservice = new HttpserviceImpl(uri);
         }
 
-        
+        public JSONObject sendLiveRequest() throws JSONException, ServiceException, EndpointException {
+                response = httpservice.getResponse(HttpMethods.GET);
+                if (checkResponse()) {
+                        return response;
+                }
+                return null;
+        }
 }
