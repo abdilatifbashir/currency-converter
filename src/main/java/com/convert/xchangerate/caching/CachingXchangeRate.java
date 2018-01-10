@@ -9,3 +9,8 @@ import com.convert.xchangerate.endpoint.EndpointException;
 import com.convert.xchangerate.storage.DiskStore;
 import com.convert.xchangerate.storage.StorageException;
 import com.convert.xchangerate.util.Currency;
+
+public abstract class CachingXchangeRate {
+
+  
+}
