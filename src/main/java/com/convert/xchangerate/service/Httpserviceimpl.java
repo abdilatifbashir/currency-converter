@@ -32,4 +32,22 @@ public class HttpserviceImpl implements HttpService {
                         throw new ServiceException("Unsupported HTTP Method: " + method.toString() + "for HttpserviceImpl class");
                 }
         }
+
+        public JSONObject getResponse(HttpMethods method) throws JSONException, ServiceException {
+                try {
+                        setMethod(method);
+                        httpClient = HttpClients.createDefault();
+                        CloseableHttpResponse response = httpClient.execute(httpMethod);
+                        HttpEntity entity = response.getEntity();
+                        JSONObject responseRates = new JSONObject(EntityUtils.toString(entity));
+
+                        //checkResponse();
+                        //saveRates();
+
+                        httpClient.close();
+                        return responseRates;
+                } catch (IOException e) {
+                        throw new ServiceException(e.getMessage());
+                }
+        }
 }
