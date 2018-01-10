@@ -35,4 +35,9 @@ public abstract class EndpointFactory extends CachingXchangeRate implements Serv
                 }
                 return null;
         }
+
+        public BigDecimal convertToBaseCurrency(BigDecimal moneyAmount, Currency fromCurrency) throws JSONException, CurrencyNotSupportedException {
+                return (moneyAmount.divide(getRate(fromCurrency), 2, RoundingMode.HALF_UP));
+        }
+        
 }
