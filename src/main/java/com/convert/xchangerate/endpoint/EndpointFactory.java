@@ -6,3 +6,11 @@ import java.math.RoundingMode;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import com.convert.xchangerate.api.CurrencyNotSupportedException;
+import com.convert.xchangerate.caching.CachingXchangeRate;
+import com.convert.xchangerate.service.HttpMethods;
+import com.convert.xchangerate.service.HttpserviceImpl;
+import com.convert.xchangerate.service.ServiceException;
+import com.convert.xchangerate.storage.DiskStore;
+import com.convert.xchangerate.util.Currency;
