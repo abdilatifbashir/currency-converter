@@ -27,6 +27,7 @@ public class MoneyChanger {
     System.out.println("The dollars are " + dollars);
     System.out.println("The quarters are " + quarters);
     System.out.println("The dimes are " + dimes);
+    System.out.println("The nickels are " + nickels);
     
   }
 }
