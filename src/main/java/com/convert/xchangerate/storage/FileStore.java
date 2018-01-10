@@ -12,5 +12,9 @@ import org.json.JSONObject;
 public class FileStore extends DiskStore {
         protected String ratesFilename;
 
+        public FileStore(String filenameAppender) {
+                this.ratesFilename = System.getProperty("file.separator") + filenameAppender + "XchangeRates.json";
+        }
+
         
 }
