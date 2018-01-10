@@ -11,5 +11,5 @@ public enum HttpMethods {
         private HttpMethods(String method) {
                 this.method = method;
         }
-        
+        public String toString(){return method;}
 }
