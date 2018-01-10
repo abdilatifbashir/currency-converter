@@ -13,5 +13,7 @@ public class CurrencyNotSupportedException extends Exception{
                 super(message, cause);
         }
 
-        
+        public CurrencyNotSupportedException(Throwable cause) {
+                super(cause);
+        }
 }
