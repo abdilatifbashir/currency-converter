@@ -20,5 +20,7 @@ public abstract class CachingXchangeRate {
                 this.diskStore = diskStore;
         }
 
-        
+        public void setExchangeRates(JSONObject exchangeRates) {
+                this.exchangeRates=exchangeRates;
+        }
 }
