@@ -43,4 +43,12 @@ public class YahooEndpoint extends EndpointFactory {
                 }
                 throw new CurrencyNotSupportedException("currency: " + currency + " is not supported by Yahoo endpoint");
         }
+
+        public long getTimestamp(Currency currency) throws JSONException, CurrencyNotSupportedException {
+                if (currency.toString().equalsIgnoreCase(Currency.USD.toString())) {
+                        return new DateTime().getMillis();
+                }
+                return retrieveTimeForCurrency(currency);
+        }
+        
 }
