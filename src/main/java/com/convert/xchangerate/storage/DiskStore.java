@@ -9,5 +9,5 @@ public abstract class DiskStore {
 
         public abstract JSONObject loadRates() throws StorageException;
 
-        
+        public abstract boolean resourceExists();
 }
