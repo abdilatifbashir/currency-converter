@@ -1,15 +1,713 @@
-<body>
-       <div id="loader-wrapper">
-           <div id="loader"></div>
-           <div class="loader-section section-left"></div>
-           <div class="loader-section section-right"></div>
-       </div>
-       <div class="parent">
-           <h1 class ="right uc">currency coverter</h1>
-           <ul class="child hover fade-in">
-           <li class="all25"><a href="/home">home</a></li>
-           <li class="all25"><a href="convertor.html">convertor</a></li>
-           <li></li>
-           <li class="all25"><a href="/contact-us">contact us</a></li>
-           </ul>
-       </div>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CURRENCY CONVERTOR</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+<link rel="stylesheet" href="css/w3school.css" type="text/css">
+<link rel="stylesheet" href="css/w3-theme-indigo.css" type="text/css">
+<link rel="stylesheet" href="css/w3-colors-metro.css" type="text/css">
+<link rel="stylesheet" href="css/w3-colors-flat.css" type="text/css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="css/style.css" type="text/css">
+
+	<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/w3-colors-windows.css" type="text/css">
+<link rel="stylesheet" href="css/w3-colors-safety.css" type="text/css">
+<link rel="stylesheet" href="css/w3-colors-highway.css" type="text/css">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+         <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/owl.carousel.css">
+		<link rel="stylesheet" href="css/owl.theme.css">
+		<link rel="stylesheet" type="text/css" href="css/full-slider.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/jPushMenu.css" media="all" />
+		<link rel="stylesheet" type="text/css" href="css/hover.css" media="all" />
+
+
+
+
+
+
+  <!-- Compiled and minified JavaScript -->
+
+  <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/jssor.js"></script>
+    <script type="text/javascript" src="js/jssor.slider.js"></script>
+<link rel="stylesheet" type="text/css" href="fontawesome/css/font-awesome.min.css"/>
+<style type="text/css">
+ .gallery-grid{
+	position:relative;
+	overflow: hidden;
+}
+.gallery-grid:hover .captn {
+    bottom: 12%;
+}
+.captn {
+    background:rgba(139, 92, 126, 0.73);
+    padding: 2em;
+    position: absolute;
+    border: solid 1px #FFF;
+    left: 6%;
+    bottom: -100%;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: .5s all;
+    transition: .5s all;
+    -moz-transition: .5s all;
+}
+.captn h4 {
+	font-size: 1.2em;
+    color: #fff;
+    text-align: center''
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+	margin-top:5%;
+}
+.captn p {
+    margin: 0.5em 0 0 0;
+    color: #FFFFFF;
+    font-size: .9em;
+}
+.box
+{
+
+    transform: translate3d(-50%,-50%);
+
+    box-sizing:border-box;
+    box-shadow: 0 5px 10px rgba(0,0,0,2);
+    border:1px solid rgba(0,0,0,1);
+
+}
+</style>
+   <script type="text/javascript">
+	$(document).ready(function(){
+		                    //bind our function to the tabs
+							$('.materialboxed').materialbox();
+							   $(".button-collapse").sideNav();
+                        $(".dropdown-button").dropdown();
+
+  $('.carousel.carousel-slider').carousel({fullWidth: true});
+							  $("#formName").on('submit',(function(e)
+																{
+																	e.preventDefault();
+																	$.ajax({
+																		url:"user_registration.php",
+																		type:"POST",
+																		data:new FormData(this),
+																		contentType:false,
+																		cache:false,
+																		processData:false,
+																		success:function(data)
+																		{
+																			//$("#return-data").html(data);
+																			if (data=="OK") {
+                                                                                //code
+																				 $("#btlogin").html('<img src="img/ajax-loader.gif" style="width:100%;" />');
+                                                                                 setTimeout(' window.location.href = "phone_dashboard.php"; ',4000);
+                                                                            }
+																			else
+																			{
+																				$("#return-data").html(data);
+																			}
+																		},
+																		error:function()
+																		{
+
+																		}
+																	})
+																	}))
+                   $('#tabs ul li a').click(function(e){
+                      //alert("You Are Good To Go");
+					  $('#img').fadeIn(1000);
+
+                      e.preventDefault();
+                      //remove the active state from all links
+                      $('#tabs ul li a').removeClass("active");
+                      //add the active state to the clicked link
+                      $(this).addClass("active");
+                      //fade out the current container
+                      $('.profile').fadeOut(600,function(){
+                        //fade in the clicked container
+                        $('#' + profileID).fadeIn(600);
+                        $('#img').fadeOut(1000);
+                      });
+                      var profileID = $(this).attr("data-id");
+
+                    });
+
+
+				$('.modal').modal();
+				$('#modal1').modal('close');
+
+	refresh();
+	latest();
+	count_huawei();
+	count_infinix();
+	count_oppo();
+	count_nokia();
+	count_iphone();
+	count_tecno();
+	count_itel();
+	count_samsung();
+	count_wiko();
+	count_htc();
+		})
+
+	function refresh() {
+                    //code
+					setTimeout(function(){
+					  $('#infin').load('infinix.php');
+
+					 refresh();
+					},2000);
+                   }
+				   function latest() {
+                    //code
+					setTimeout(function(){
+					  $('#latest').load('latest.php');
+
+					 latest();
+					},2000);
+                   }
+				   function count_itel(args) {
+                    //code
+					setTimeout(function(){
+					 $('#itel-count').load('itel_count.php');
+					})
+                   }
+				   function count_htc(args) {
+                    //code
+					setTimeout(function()
+							   {
+								$('#htc-count').load('htc_count.php');
+							   })
+                   }
+				    function count_wiko(args) {
+                    //code
+					setTimeout(function(){
+					 $('#wiko-count').load('wiko_count.php');
+					})
+                   }
+				   function count_samsung(args) {
+                    //code
+					setTimeout(function(){
+					 $('#samsung-count').load('samsung_count.php');
+					})
+                   }
+				   function count_huawei() {
+                    //code
+					setTimeout(function()
+							   {
+								$('#huawei-count').load('huawei_count.php')
+							   })
+                   }
+				    function count_infinix() {
+                    //code
+					setTimeout(function()
+							   {
+								$('#infinix-count').load('infinix_count.php')
+							   })
+                   }
+				   function count_oppo() {
+                    //code
+					setTimeout(function()
+							   {
+								$('#oppo-count').load('oppo_count.php')
+							   })
+                   }
+				   function count_nokia() {
+                    //code
+					setTimeout(function()
+							   {
+								$('#nokia-count').load('nokia_count.php');
+							   })
+                   }
+				   function count_iphone(args) {
+                    //code
+					setTimeout(function(){
+					 $('#iphone-count').load('iphone_count.php');
+					})
+                   }
+				   function count_tecno(args) {
+                    //code
+					setTimeout(function (){
+					 $('#tecno-count').load('tecno_count.php');
+					})
+                   }
+
+   </script>
+    <!-- Caption Style -->
+    <style>
+
+
+
+
+				      					.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+
+                }
+                 .captionOrange, .captionBlack
+        {
+            color: #fff;
+            font-size: 20px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .captionOrange
+        {
+            background: #EB5100;
+            background-color: rgba(235, 81, 0, 0.6);
+        }
+        .captionBlack
+        {
+        	font-size:16px;
+            background: #000;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        a.captionOrange, A.captionOrange:active, A.captionOrange:visited
+        {
+        	color: #ffffff;
+        	text-decoration: none;
+        }
+        a.captionOrange:hover
+        {
+            color: #eb5100;
+            text-decoration: underline;
+            background-color: #eeeeee;
+            background-color: rgba(238, 238, 238, 0.7);
+        }
+        .bricon
+        {
+            background: url(img/browser-icons.png);
+        }
+		  .share-icon {
+                    display: inline-block;
+                    margin: 4px;
+                    float: left;
+                    width: 32px;
+                    height: 32px;
+                    cursor: pointer;
+                    vertical-align: middle;
+                    background-image: url(img/share-icons.png);
+                }
+
+                .share-facebook {
+                    background-position: 0px 0px;
+                }
+
+                    .share-facebook:hover {
+                        background-position: 0px -40px;
+                    }
+
+        .share-twitter {
+            background-position: -40px 0px;
+        }
+
+            .share-twitter:hover {
+                background-position: -40px -40px;
+            }
+
+        .share-pinterest {
+            background-position: -80px 0px;
+        }
+
+            .share-pinterest:hover {
+                background-position: -80px -40px;
+            }
+
+                .share-linkedin {
+                    background-position: -240px 0px;
+                }
+
+                    .share-linkedin:hover {
+                        background-position: -240px -40px;
+                    }
+
+
+                .share-googleplus {
+                    background-position: -120px 0px;
+                }
+
+                    .share-googleplus:hover {
+                        background-position: -120px -40px;
+                    }
+
+
+        .share-stumbleupon {
+            background-position: -360px 0px;
+        }
+
+            .share-stumbleupon:hover {
+                background-position: -360px -40px;
+            }
+
+                .share-email {
+                    background-position: -320px 0px;
+                }
+
+                    .share-email:hover {
+                        background-position: -320px -40px;
+                    }
+					 .side .w3-ul li a
+					{
+						text-decoration: none;
+						color: #FFFFFF;
+					}
+.profile
+{
+    display: none;
+    position: relative;
+}
+    </style>
+
+
+</head>
+<body  style="margin:0;padding:0; background:#fff; font-family: Arial, Verdana, Sans-Serif;">
+
+<section id="home">
+ <div class="w3-circle w3-theme-l4">
+<a href="#" style="position: fixed;bottom: 20px;padding-left: 90%;z-index: 10;" class="w3-xxlarge   pull-right scroll-top back-to-top">&uarr;</a>
+</div>
+                         <div class="row">
+						 <div class="col-lg-12 col-sm-12 col-md-12">
+
+
+                        <div class="w3-win-phone-green w3-padding-16 w3-card">
+	      <legend class="w3-xxlarge animated fadeInDownBig " style="color: #FFFFFF;font-family:Garamond;text-align: center;">CURRENCY COVERSION COMMUNICATION</legend>
+          <legend class="w3-xlarge animated fadeInLeftBig" style="color: #FFFFFF;outline: dashed;font-family:Garamond;text-align: center;">BEST exchange PLATFORM <span> PLUS</span><br>REAL TIME UPDATE ABOUT THE CURRENCY EXCHANGE</legend>
+						</div>
+
+  <nav style="" class="w3-win-phone-green navbar-fixed">
+
+
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul style=""  class="hide-on-med-and-down">
+        <li><a class="scroll-link active w3-bottombar " data-id="home" href="#">HOME</a></li>
+        <li><a class="scroll-link  w3-bottombar "  data-id="about" href="#">About</a></li>
+		        <li><a class="scroll-link  w3-bottombar "  data-id="testimonials" href="#">CONVERTOR</a></li>
+        <li><a class="scroll-link  w3-bottombar "  data-id="contact" href="#">Contacts</a></li>
+
+		<li><a class="modal-trigger" href="#modal1"><i class="fa fa-user"></i><i class="fa fa-sign-out"></i>Register</a></li>
+      </ul>
+      <ul class="side-nav " id="mobile-demo">
+        <li><a class="scroll-link active w3-bottombar " data-id="home" href="#">HOME</a></li>
+        <li><a class="scroll-link  w3-bottombar "  data-id="about" href="#">About</a></li>
+		 <li><a class="scroll-link  w3-bottombar "  data-id="testimonials" href="#">Testimonials</a></li>
+        <li><a class="scroll-link  w3-bottombar "  data-id="contact" href="#">Contacts</a></li>
+
+		<li><a class="modal-trigger" href="#modal1"><i class="fa fa-user"></i><i class="fa fa-sign-out"></i>Register</a></li>
+		<li><a href="login.php"><i class="fa fa-user"></i><i class="fa fa-sign-in"></i>Login</a></li>
+      </ul>
+
+  </nav>
+  </div>
+  </div>
+  </section>
+
+
+
+
+
+				 <section>
+
+				  <!-- Modal Structure -->
+				  <div id="modal1" class="modal modal-fixed-footer">
+				   <div style="margin-right:5%;" class=""><a href="#!" class="modal-action modal-close waves-effect waves-green pull-right"><i class="w3-xxlarge">X</i></a></div><br>
+				   <div class="modal-content">
+
+					<h4 class="w3-win-phone-mauve"><legend style="color: #FFFFFF;text-align: center;">currency conversion communication subcription </legend></h4>
+					 <form id="formName" action="" method="POST">
+
+							<div class="input-field ">
+                            <input type="text" name="first" class="">
+                            <label for="first" class="">Firstname</label>
+                            </div>
+							<div class="input-field ">
+                            <input type="text" name="last" class="">
+                            <label for="last" class="">Lastname</label>
+                            </div>
+                            <div class="input-field ">
+                            <input type="text" name="email" class="">
+                            <label for="email" class="">Email</label>
+                            </div>
+							<div class="input-field ">
+                            <input type="number" name="num" class="">
+                            <label for="num" class="">Phone Number</label>
+                            </div>
+							 <div id="return-data"></div>
+                            <div class="w3-padding-16" id="btlogin"></div>
+							<div>
+                            <button type="submit" class="btn btn-lg btn-block btn-success">subcribe</button>
+							</div>
+                        </form>
+				   </div>
+				  </div>
+					<div class="row" style="outline: dashed;">
+						<div class="col-sm-4 col-sm-4 col-md-4">
+							<div id="tabs" class="side">
+								<ul class="w3-ul w3-padding-8 w3-card w3-metro-dark-green">
+									<li class="w3-padding-16 w3-xlarge">currencies</li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="new" class="active">USD &nbsp &nbsp</a></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="huawei">CNY &nbsp &nbsp</a><span id="huawei-count" class="pull-right badge" style="color: #FFFFFF;"></span></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="infinix">EUR &nbsp &nbsp</a><span id="infinix-count" class="pull-right badge" style="color: #FFFFFF;"></span></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="itel">GBP &nbsp &nbsp</a><span id="itel-count" class="pull-right badge" style="color: #FFFFFF;"></span></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="tecno">RUR &nbsp &nbsp</a><span id="tecno-count" class="pull-right badge" style="color: #FFFFFF;"></span></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="nokia">BRL &nbsp &nbsp</a><span id="nokia-count" class="pull-right badge" style="color: #FFFFFF;"></span></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="oppo">CHF &nbsp &nbsp</a><span id="oppo-count" class="pull-right badge" style="color: #FFFFFF;"></span></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="iphone">IDR &nbsp &nbsp</a><span id="iphone-count" class="pull-right badge" style="color: #FFFFFF;"></span></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="samsung">JPY&nbsp &nbsp</a><span id="samsung-count" class="pull-right badge" style="color: #FFFFFF;">50</span></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="wiko">PNL&nbsp &nbsp</a><span id="wiko-count" class="pull-right badge" style="color: #FFFFFF;">50</span></li>
+									<li class="w3-serif w3-large w3-padding-8"><a href="#" data-id="htc">UAH &nbsp &nbsp</a><span id="htc-count" class="pull-right badge" style="color: #FFFFFF;">50</span></li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="col-sm-8 col-lg-8 col-md-8">
+							<div id="new" style="display:block;" class="profile w3-card w3-panel" >
+							<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">OUR CURRENCIES</h1>
+							</div>
+							<div id="latest" class="animated fadeInUp">
+
+							</div>
+							</div>
+								<div class="profile w3-card-4 w3-panel " id="huawei">
+										<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Huawei Phones In Store</h1>
+										</div>
+						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
+
+							</div>
+								<div id="infinix" class="profile w3-card w3-panel">
+								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Infinix Phones In Store</h1>
+										</div>
+						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
+<div id="infin" class="animated fadeInDown" style=""></div>
+
+							</div>
+							<div id="itel" class="profile w3-card w3-panel">
+								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Tecno Phones In Store</h1>
+										</div>
+						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
+
+							</div>
+							<div id="tecno" class="profile w3-card w3-panel">
+								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Tecno Phones In Store</h1>
+										</div>
+						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
+
+							</div>
+							<div id="nokia" class="profile w3-card w3-panel">
+								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Nokia Phones In Store</h1>
+										</div>
+						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
+
+							</div>
+							<div id="iphone" class="profile w3-card w3-panel">
+								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Iphone Phones In Store</h1>
+										</div>
+						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
+
+							</div>
+							<div id="wiko" class="profile w3-card w3-panel">
+								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Wiko Phones In Store</h1>
+										</div>
+						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
+
+							</div>
+
+							</div>
+						</div>
+
+
+				 </section>
+				 <section class="w3-win-phone-indigo" id="about">
+				  <div class="row w3-card box">
+				   <div class="col-sm-12 col-lg-12 col-md-12">
+					<div class="w3-padding-16">
+					 <legend class="w3-bottombar w3-xxlarge"  style="color: #FFFFFF;text-align: center;font-family:Mrs Eaves;">About OUR PLATFORM</legend>
+
+					 <div class="row">
+					  <div class="col-sm-4 col-lg-4 col-md-4 w3-rightbar" style="height: 100%;">
+					   <img src="img/phone-1.jpeg" class="materialboxed" style="height: 50%;width: 100%;">
+					  </div>
+					  <div class="col-lg-8 col-md-8 col-sm-8">
+					   <p class="w3-xlarge" style="color: #FFFFFF;font-family: Ostrich Sans;"> this is online and simple currency converter that allows you to quickly check the latest currency exchange rates. Upon exit the app saves the currencies you've selected. With more than 160 currencies and hourly updated conversion rates, </p>
+					  </div>
+					 </div>
+					</div>
+					</div>
+				   </div>
+				  </div>
+				 </section>
+				 <div class="clearfix" style ="height:20%;"></div>
+
+
+				 <div class="clearfix" style ="height:20%;"></div>
+
+				 <section id="contact" class="w3-win-phone-green">
+				  <legend class="w3-xxlarge w3-bottombar" style="color:#FFFFFF;text-align: center;font-family: Optima">Get In Touch With us</legend>
+				    <div class="w3-row-padding w3-center w3-padding-24" style="margin:0 -16px">
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
+        <p>CURRENCY@CURRENCYCONVERTOR.co.ke</p>
+      </div>
+      <div class="w3-third w3-teal">
+        <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
+        <p>Nairobi, KENYA</p>
+      </div>
+      <div class="w3-third w3-dark-grey">
+        <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
+        <p>512312311</p>
+      </div>
+    </div>
+    <hr class="w3-opacity">
+	<div class="container">
+			<div class="row">
+				<div class="col-md-12 w3-bottombar contact_a_title  wow  rollIn ">
+					<h2>Have any <span>Query!,Compliment,Complain Or Comment</span></h2>
+					<p>Just send us a message We will help you and make you smile</p>
+				</div>
+			</div>
+			<div class="row contact_buttom">
+				<div class="col-md-4 col-sm-4 col-xs-12 social_icon wow fadeInDown" data-wow-delay=".4s">
+					<div class="row">
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="single_social fb_link">
+								<a class="facebook hvr-bounce-to-bottom" href=""><i class="fa fa-facebook"></i></a>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="single_social tw_link">
+								<a class="twitter hvr-bounce-to-bottom" href=""><i class="fa fa-twitter"></i></a>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="single_social int_link">
+								<a class="instagram hvr-bounce-to-bottom" href=""><i class="fa fa-instagram"></i></a>
+							</div>
+						</div>
+						<div class="col-md-6 col-sm-6 col-xs-6">
+							<div class="single_social dri_link">
+								<a class="dribbble hvr-bounce-to-bottom" href=""><i class="fa fa-dribbble"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8 col-sm-8 col-xs-12 contact_box">
+
+						<form style="color:#FFFFFF;" class="form">
+						<div class="row">
+							<div class="input-field col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay=".2s">
+								<input value="" type="text" class="form-control" id="fast-name">
+								<label style="color: #FFFFFF;" >Firstname</label>
+							</div>
+
+							<div class="input-field col-md-6 col-sm-6 col-xs-12  wow fadeInRight" data-wow-delay=".2s">
+								<input value="" type="text" class="form-control" id="last-name">
+								<label style="color: #FFFFFF;">Lastname</label>
+							</div>
+							<div class="input-field col-md-6 col-sm-6 col-xs-12 wow fadeInLeft" data-wow-delay=".3s">
+								<input value="" type="email" class="form-control" id="email">
+								<label style="color: #FFFFFF;">Email</label>
+							</div>
+							<div class="input-field col-md-6 col-sm-6 col-xs-12  wow fadeInRight" data-wow-delay=".3s">
+								<input value="" type="number" class="form-control" id="phone">
+								<label style="color: #FFFFFF;">Phone Number</label>
+							</div>
+							<div class="form-group col-md-12 col-sm-12 col-xs-12 massage_a  wow fadeInUp" data-wow-delay=".4s">
+								<textarea name="" id="discription" rows="9" class="form-control " placeholder="Your project details and description ..." ></textarea>
+								<div class="button bold-text main-bg massage_s"><i class="fa fa-paper-plane"></i></div>
+							</div>
+						</div>
+						</form>
+
+
+				</div>
+			</div>
+		</div>
+
+	<footer  class="footer_area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>&copy;  2018 <a href="#">CURRENCY CONVERTOR</a> / Design by & Developed by <a href="#">STEWART & ABDILATIF</a></p>
+				</div>
+			</div>
+		</div>
+	</footer><!-- End of Footer Area -->
+				 </section>
+				<div class="">
+
+	</div>
+				 <script type="text/javascript">
+$(document).ready(function() {
+	// navigation click actions
+	$('.scroll-link').on('click', function(event){
+		event.preventDefault();
+		var sectionID = $(this).attr("data-id");
+		scrollToID('#' + sectionID, 750);
+	});
+	// scroll to top action
+	$('.scroll-top').on('click', function(event) {
+		event.preventDefault();
+		$('html, body').animate({scrollTop:0}, 'slow');
+	});
+	// mobile nav toggle
+	$('#nav-toggle').on('click', function (event) {
+		event.preventDefault();
+		$('#main-nav').toggleClass("open");
+	});
+	$('#show-panels').click(function()
+					 {
+						$('.panels').slideDown();
+						$('#show-again').show();
+						$('#show-panels').hide();
+
+					 });
+	$('#show-again').click(function()
+						   {
+							$('.panels').slideUp();
+							//$('.panels').hide();
+							$('#show-again').hide();
+						$('#show-panels').show();
+						   })
+
+});
+// scroll function
+function scrollToID(id, speed){
+	var offSet = 50;
+	var targetOffset = $(id).offset().top - offSet;
+	var mainNav = $('#main-nav');
+	$('html,body').animate({scrollTop:targetOffset}, speed);
+	if (mainNav.hasClass("open")) {
+		mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+		mainNav.removeClass("open");
+	}
+}
+if (typeof console === "undefined") {
+    console = {
+        log: function() { }
+    };
+}
+
+</script>
+<script src="js/jPushMenu.js"></script>
+		<script src="js/owl.carousel.js"></script>
+		<script src="js/jquery.fancybox.js"></script>
+		<script src="js/jquery.fancybox.pack.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+</body>
+</html>
