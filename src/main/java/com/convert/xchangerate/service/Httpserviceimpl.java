@@ -13,7 +13,7 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class HttpserviceImpl implements HttpService {
+public class HttpServiceImpl implements HttpService {
         // used for executing requests to the (REST) API
         private CloseableHttpClient httpClient;
         private String uri;
