@@ -9,7 +9,7 @@ public class CurrencyNotSupportedException extends Exception{
                 super(message);
         }
 
-        public CurrencyNotSUpportedException(String message, Throwable cause) {
+        public CurrencyNotSupportedException(String message, Throwable cause) {
                 super(message, cause);
         }
 
