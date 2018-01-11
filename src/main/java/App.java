@@ -25,6 +25,12 @@ public class App {
     return new ModelAndView(model, layout);
   }, new VelocityTemplateEngine());
 
+  get("/convertor", (request, response) -> {
+  Map<String, Object> model = new HashMap<String, Object>();
+  model.put("template", "templates/convertor.vtl");
+  return new ModelAndView(model, layout);
+}, new VelocityTemplateEngine());
+
   //Root that triggers my templates
 
 /*

@@ -395,7 +395,7 @@
       <ul style=""  class="hide-on-med-and-down">
         <li><a class="scroll-link active w3-bottombar " data-id="home" href="#">HOME</a></li>
         <li><a class="scroll-link  w3-bottombar "  data-id="about" href="#">About</a></li>
-		        <li><a class="scroll-link  w3-bottombar "  data-id="testimonials" href="#">CONVERTOR</a></li>
+		        <li><a class="scroll-link  w3-bottombar "  data-id="testimonials" href="/convertor">CONVERTOR</a></li>
         <li><a class="scroll-link  w3-bottombar "  data-id="contact" href="#">Contacts</a></li>
 
 		<li><a class="modal-trigger" href="#modal1"><i class="fa fa-user"></i><i class="fa fa-sign-out"></i>Register</a></li>
@@ -403,7 +403,7 @@
       <ul class="side-nav " id="mobile-demo">
         <li><a class="scroll-link active w3-bottombar " data-id="home" href="#">HOME</a></li>
         <li><a class="scroll-link  w3-bottombar "  data-id="about" href="#">About</a></li>
-		 <li><a class="scroll-link  w3-bottombar "  data-id="testimonials" href="#">Testimonials</a></li>
+		 <li><a class="scroll-link  w3-bottombar "  data-id="testimonials" href="/convertor">converter</a></li>
         <li><a class="scroll-link  w3-bottombar "  data-id="contact" href="#">Contacts</a></li>
 
 		<li><a class="modal-trigger" href="#modal1"><i class="fa fa-user"></i><i class="fa fa-sign-out"></i>Register</a></li>
@@ -480,50 +480,32 @@
 							<div id="latest" class="animated fadeInUp">
 
 							</div>
-							</div>
-								<div class="profile w3-card-4 w3-panel " id="huawei">
-										<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Huawei Phones In Store</h1>
-										</div>
-						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
-
-							</div>
-								<div id="infinix" class="profile w3-card w3-panel">
-								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Infinix Phones In Store</h1>
-										</div>
-						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
-<div id="infin" class="animated fadeInDown" style=""></div>
-
-							</div>
-							<div id="itel" class="profile w3-card w3-panel">
-								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Tecno Phones In Store</h1>
-										</div>
-						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
-
-							</div>
-							<div id="tecno" class="profile w3-card w3-panel">
-								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Tecno Phones In Store</h1>
-										</div>
-						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
-
-							</div>
-							<div id="nokia" class="profile w3-card w3-panel">
-								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Nokia Phones In Store</h1>
-										</div>
-						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
-
-							</div>
-							<div id="iphone" class="profile w3-card w3-panel">
-								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Iphone Phones In Store</h1>
-										</div>
-						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
-
-							</div>
-							<div id="wiko" class="profile w3-card w3-panel">
-								<div class=" w3-padding-16 w3-win-phone-green " style="width: 100%;"><h1 class=" animated fadeInRightBig" style="text-align: center;color: #FFFFFF;font-family:Garamond;width: 100%;outline: dashed;letter-spacing: 0.1em;">Wiko Phones In Store</h1>
-										</div>
-						<img id="img" style="top: 50%;z-index: 5;right: 35%;bottom: 50%;position: fixed;display: none;" src="img/ajax-loader.gif" alt="Image Goes Here">
-
-							</div>
+              <div>
+              <table>
+              <tr>
+              <td><input  id="fromAmount" type="text" /></td>
+              <td>
+              <select id="from">
+              <option value="USD">US dollar</option>
+              <option value="CAD">canadian dollar</option>
+              <option value="JPY">japanses yen</option>
+              <option value="RUB">russian ruble</option>
+              </select>
+              </td>
+              </tr>
+              <tr>
+              <td><input  id="toAmount" type="text" /></td>
+              <td>
+              <select id="to">
+              <option value="USD">US dollar</option>
+              <option value="CAD">canadian dollar</option>
+              <option value="JPY">japanses yen</option>
+              <option value="RUB">russian ruble</option>
+              </select>
+              </td>
+              </tr>
+              </table>
+              </div>
 
 							</div>
 						</div>
