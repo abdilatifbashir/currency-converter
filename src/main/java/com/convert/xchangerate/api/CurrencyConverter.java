@@ -33,11 +33,11 @@ public class CurrencyConverter implements Converter {
         public BigDecimal convertCurrency(BigDecimal moneyAmount, Currency fromCurrency, Currency toCUrrency) throws CurrencyNotSupportedException, JSONException, StorageException, EndpointException, ServiceException {
                 BigDecimal amount;
                 updateResource(fromCurrency, toCurrency);
-                if (fromCurrency == null || to Currency == null) {
+                if (fromCurrency == null || toCurrency == null) {
                         throw new IllegalArgumentException("Convert currency takes 2 arguments!");
                 } else if (fromCurrency.equals(toCurrency)) {
                         amount = moneyAmount;
-                } else if (fromCUrrency.equals(endpointFactory.baseCurrency)) {
+                } else if (fromCurrency.equals(endpointFactory.baseCurrency)) {
                         amount = endpointFactory.convertFromBaseCurrency(moneyAmount, fromCurrency);
                 } else {
                         BigDecimal intermediateAmount = endpointFactory.convertToBaseCurrency(moneyAmount, fromCurrency);
