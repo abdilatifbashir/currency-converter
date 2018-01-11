@@ -19,7 +19,7 @@ public abstract class EndpointFactory extends CachingXchangeRate implements Serv
         // the intermediate Currency
         public Currency baseCurrency;
         // used for executing requests to the (REST) api
-        private HttpserviceImpl httpservice;
+        private HttpServiceImpl httpservice;
         protected JSONObject response;
 
         public EndpointFactory(DiskStore diskStore, Currency baseCurrency, String uri) {
@@ -45,7 +45,7 @@ public abstract class EndpointFactory extends CachingXchangeRate implements Serv
                 return getRate(toCurrency).multiply(moneyAmount, new MathContext(digitsBeforeDecimal + 2, RoundingMode.HALF_UP));
         }
 
-        public abstract boolean checkResponse() throws ENdpointException, JSONException;
+        public abstract boolean checkResponse() throws EndpointException, JSONException;
 
         public abstract BigDecimal getRate(Currency currency) throws JSONException, CurrencyNotSupportedException;
 }

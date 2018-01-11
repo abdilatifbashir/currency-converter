@@ -2,7 +2,7 @@ package com.convert.xchangerate.endpoint;
 
 import java.math.BigDecimal;
 
-import org.json.JSONEception;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.convert.xchangerate.api.CurrencyNotSupportedException;
@@ -20,5 +20,5 @@ public interface ServiceEndpoint {
         public BigDecimal convertFromBaseCurrency(BigDecimal moneyAmount, Currency toCurrency) throws JSONException, CurrencyNotSupportedException;
 
         public abstract BigDecimal getRate(Currency currency) throws JSONException, CurrencyNotSupportedException;
-      
+
 }
