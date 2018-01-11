@@ -1,9 +1,9 @@
 apply plugin: 'java'
 apply plugin: 'application'
 
-archivesBaseName = "app"
+archivesBaseName = "currency-convertor"
 version = '1.0'
-applicationName = "app"
+applicationName = "currency-convertor"
 mainClassName = "App"
 
 repositories {
