@@ -1,0 +1,36 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#amt {
+    font-size: 20px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+span {
+    color: tomato;
+}
+#small {
+    color: black;
+    font-size: 10px;
+}
+#btn {
+  width: 70px;
+  margin: 10px auto;
+  background-color: tomato;
+  text-align: center;
+  padding: 8px;
+  color: white;
+  border-radius: 10px;
+  box-shadow:  0 0 2px black;
+  cursor: pointer;
+}
+
+h1, h2 {
+  text-align: center;
+}
