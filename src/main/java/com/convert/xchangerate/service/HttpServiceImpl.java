@@ -19,7 +19,7 @@ public class HttpServiceImpl implements HttpService {
         private String uri;
         private HttpRequestBase httpMethod;
 
-        public HttpserviceImpl(String uri) {
+        public HttpServiceImpl(String uri) {
                 this.uri = uri;
         }
 
