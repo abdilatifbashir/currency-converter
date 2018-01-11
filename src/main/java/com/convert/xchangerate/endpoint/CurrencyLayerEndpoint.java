@@ -12,7 +12,7 @@ public class CurrencyLayerEndpoint extends EndpointFactory {
         public static final String ENDPOINT = "live";
         private static final java.util.logging.Logger LOGGER = java.util.logging.Logger.getLogger(CurrencyLayerEndpoint.class.getName());
 
-        public CurrencyLayerENdpoint(DiskStore diskStore, String accessKey) {
+        public CurrencyLayerEndpoint(DiskStore diskStore, String accessKey) {
                 super(diskStore, Currency.USD, BASE_URL + ENDPOINT + "?access_key=" + accessKey);
         }
 
