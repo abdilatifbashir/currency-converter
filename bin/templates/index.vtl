@@ -87,6 +87,7 @@
     border:1px solid rgba(0,0,0,1);
 
 }
+
 </style>
    <script type="text/javascript">
 	$(document).ready(function(){
@@ -371,6 +372,32 @@
 }
     </style>
 
+    <script type="text/javascript" src="http://currencyconverter.55uk.net/currency_converter_json.js"></script>
+	<script type="text/javascript">
+	function getMyRates(jData) {
+		if (jData == null) {
+			alert("There was a problem parsing search results.");
+			return;
+		}
+		var myval = jData.ResultSet;
+		var mydiv = jData.xxMyDiv;
+		document.getElementById(mydiv).innerHTML =  myval;
+	}
+
+	function myPrivateConverterMany() {
+		var xxv = document.getElementById('xxvalue').value;
+		var xxf = document.getElementById('xxfrom').value;
+		var xxt = document.getElementById('xxto').value;
+		if (xxv > 0) {
+			getExchangeRatesDiv('xxrates',xxv,xxf,xxt,'true');
+		}
+	}
+	</script>
+
+
+
+
+
 
 </head>
 <body  style="margin:0;padding:0; background:#fff; font-family: Arial, Verdana, Sans-Serif;">
@@ -407,7 +434,7 @@
         <li><a class="scroll-link  w3-bottombar "  data-id="contact" href="#">Contacts</a></li>
 
 		<li><a class="modal-trigger" href="#modal1"><i class="fa fa-user"></i><i class="fa fa-sign-out"></i>Register</a></li>
-		<li><a href="login.php"><i class="fa fa-user"></i><i class="fa fa-sign-in"></i>Login</a></li>
+
       </ul>
 
   </nav>
@@ -582,86 +609,39 @@ UK
 					</div>
 				   </div>
 				  </div>
-				 </section>
-				 <div class="clearfix" style ="height:20%;"></div>
+        </section >
+         <section id="convert" style="display:inline;">
+
+         CONVERT: <input id="xxvalue" type="number" value="0.00" />
+ FROM:
+ <select id="xxfrom">
+   <option value="GBP">GBP - British Pound</option>
+   <option value="EUR">EUR - Euro</option>
+   <option value="USD">USD - U.S. Dollar</option>
+   <option value="CAD">CAD - Canadian Dollar</option>
+   <option value="AUD">AUD - Australian Dollar</option>
+   <option value="JPY">JPY - Japanese Yen</option>
+ </select>
+ TO:
+ <select id="xxto">
+   <option value="EUR">EUR - Euro</option>
+   <option value="USD">USD - U.S. Dollar</option>
+   <option value="GBP">GBP - British Pound</option>
+   <option value="CAD">CAD - Canadian Dollar</option>
+   <option value="AUD">AUD - Australian Dollar</option>
+   <option value="JPY">JPY - Japanese Yen</option>
+ </select>
+ <input type="button" class="btn btn-success btn-lg btn-block" value="convert" onclick="myPrivateConverterMany();" />
+ <div id="xxrates"></div>
 
 
-				 <div class="clearfix" style ="height:20%;"></div>
-         <section id="convert">
-          <div class="wrapper">
-<div>
- <h1>Currency Converter</h1>
- <h2>Fixer.io</h2>
-</div>
 
 
-<div>
- <form>
-   <div class="input-field col s6">
-   <select>
-     <option value="" disabled selected>From</option>
-     <option value="USD">USD</option>
-     <option value="AUD">AUD</option>
-     <option value="BGN">BGN</option>
-     <option value="BRL">BRL</option>
-     <option value="CAD">CAD</option>
-     <option value="CHF">CHF</option>
-     <option value="CNY">CNY</option>
-     <option value="DKK">DKK</option>
-     <option value="EUR">EUR</option>
-     <option value="GBP">GBP</option>
-     <option value="HUF">HUF</option>
-     <option value="INR">INR</option>
-     <option value="IDR">IDR</option>
-     <option value="JPY">JPY</option>
-     <option value="RON">RON</option>
-     <option value="SEK">SEK</option>
-     <option value="SGD">SGD</option>
-   </select>
-
- </div>
+</section>
 
 
-<div class="clearfix" style="height:10%;"></div>
-    <div class="input-field col s6">
-   <select>
-     <option value="" disabled selected>Into</option>
-     <option value="AUD">AUD</option>
-     <option value="BGN">BGN</option>
-     <option value="BRL">BRL</option>
-     <option value="CAD">CAD</option>
-     <option value="CHF">CHF</option>
-     <option value="CNY">CNY</option>
-     <option value="DKK">DKK</option>
-     <option value="EUR">EUR</option>
-     <option value="GBP">GBP</option>
-     <option value="HUF">HUF</option>
-     <option value="INR">INR</option>
-     <option value="IDR">IDR</option>
-     <option value="JPY">JPY</option>
-     <option value="RON">RON</option>
-     <option value="SEK">SEK</option>
-     <option value="SGD">SGD</option>
-     <option value="USD">USD</option>
-   </select>
 
- </div>
 
-      <select id="toMoney">
-
-      </select>
- </div>
-
-  <div id="btn"><button type='submit' class="btn btn-success btn-lg btn-block">Convert</button></div>
- </form>
- <div id="amt"></div>
- <div id="footer"></div>
- <div id="fixer"></div>
-
-     </div>
-
-        </section>
-        <div class="clearfix" style ="height:20%;"></div>
 
 
 				 <section id="contact" class="w3-win-phone-green">
@@ -677,7 +657,7 @@ UK
       </div>
       <div class="w3-third w3-dark-grey">
         <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
-        <p>512312311</p>
+        <p>12048306</p>
       </div>
     </div>
     <hr class="w3-opacity">
